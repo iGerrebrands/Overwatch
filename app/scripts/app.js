@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name overwatchApp
- * @description
- * # overwatchApp
- *
- * Main module of the application.
- */
 angular
   .module('overwatchApp', [
     'ngAnimate',
@@ -19,17 +11,13 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+      .when('/home', {
+        template: '<div home></div>'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/heroes', {
+        template: '<div heroes></div>'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/home'
       });
   });
