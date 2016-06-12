@@ -17,6 +17,15 @@ angular
       .when('/heroes', {
         template: '<div heroes></div>'
       })
+      .when('/stats', {
+        template: '<div stats></div>'
+      })
+      .when('/compare', {
+        template: '<div compare></div>'
+      })
+      .when('/contact', {
+        template: '<div contact></div>'
+      })
       .otherwise({
         redirectTo: '/home'
       });
