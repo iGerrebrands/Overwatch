@@ -6,11 +6,12 @@ angular
     $http,
     CONFIG
   ) {
-    this.get = function (type, platform, regio, player, hero) {
-      // TODO: EDIT URL
+    this.get = function ( platform, regio, tag, type, hero) {
+      var heroUrl = hero === null || typeof hero === 'undefined' ? "" : '/' + hero;
+
       return $http({
         method: 'GET',
-        url: hero === null || typeof hero === 'undefined' ? CONFIG.API.path + '/' + platform + '/' + type : CONFIG.API.path + '/' + platform + '/' + type + '/' + hero
+        url: CONFIG.API.path + '/' + platform + '/' + regio + '/' + tag + '/' + type + heroUrl
       });
     };
   });
