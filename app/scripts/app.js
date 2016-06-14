@@ -20,6 +20,9 @@ angular
       .when('/heroes', {
         template: '<div heroes></div>'
       })
+      .when('/heroes/hero',{
+        template: '<div hero></div>'
+      })
       .when('/stats', {
         template: '<div stats></div>'
       })
@@ -32,6 +35,7 @@ angular
       .otherwise({
         redirectTo: '/home'
       });
+
 
     $httpProvider.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
   });
