@@ -9,7 +9,10 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
+  .config(function (
+    $routeProvider,
+    $httpProvider
+  ) {
     $routeProvider
       .when('/home', {
         template: '<div home></div>'
@@ -29,4 +32,6 @@ angular
       .otherwise({
         redirectTo: '/home'
       });
+
+    $httpProvider.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
   });
