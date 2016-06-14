@@ -7,7 +7,7 @@ angular
     CONFIG
   ) {
     this.get = function ( platform, regio, tag, type, hero) {
-      var heroUrl = hero === null || typeof hero === 'undefined' ? "" : '/' + hero;
+      var heroUrl = hero === null || typeof hero === 'undefined' ? "" : '/' + hero + '/';
 
       return $http({
         method: 'GET',
