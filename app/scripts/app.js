@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name overwatchApp
- * @description
- * # overwatchApp
- *
- * Main module of the application.
- */
 angular
   .module('overwatchApp', [
     'ngAnimate',
@@ -17,19 +9,33 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
+  .config(function (
+    $routeProvider,
+    $httpProvider
+  ) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+      .when('/home', {
+        template: '<div home></div>'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/heroes', {
+        template: '<div heroes></div>'
+      })
+      .when('/heroes/hero',{
+        template: '<div hero></div>'
+      })
+      .when('/stats', {
+        template: '<div stats></div>'
+      })
+      .when('/compare', {
+        template: '<div compare></div>'
+      })
+      .when('/contact', {
+        template: '<div contact></div>'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/home'
       });
+
+
+    $httpProvider.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
   });
